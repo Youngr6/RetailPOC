@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>AudaRetail - Login</title>
+
+    <link rel="stylesheet" href="content/site.css"/>
+    <link rel="stylesheet" href="content/bootstrap.css" />
+    <link rel="stylesheet" href="content/bootstrap-responsive.css" />
+</head>
+<body>
+
+        <div data-role="page" data-title="Login" id="LoginPage">
+
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner ">
+            <div class="container">
+              <a class="brand" href="#">AudaRetail</a>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li class="active"><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="loginPanel">
+            <div data-role="content"  data-inset="true">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Enter your login details</legend>
+
+                    <div class="control-group">
+                        <label class="control-label" for="CompanyCode">Company Code</label>
+                        <div class="controls">
+                            <input style="text-transform: uppercase" type="text" placeholder="CompanyCode" name="CompanyCode" />
+                        </div>            
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="UserName">User Name</label>
+                        <div class="controls">
+                            <input type="text" placeholder="User Name" name="UserName" />
+                        </div>            
+                    </div>
+    
+                    <div class="control-group">
+                        <label class="control-label" for="Password">Password</label>
+                        <div class="controls">
+                            <input type="password" placeholder="Password" name="Password" />
+                        </div>
+                    </div>
+    
+                    <div class="control-group">
+                        <div class="controls">
+                        <label class="checkbox" for="RememberMe">
+                            <input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" />
+                            <input name="RememberMe" type="hidden" value="false" /> Remember me?</label>   
+                        </div>
+                    </div>    
+
+                    <div class="controls">
+                        <input type="submit" class="btn btn-primary" value="Log in" />
+                    </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        </div>
+</body>
+</html>

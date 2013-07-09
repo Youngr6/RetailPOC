@@ -1,0 +1,1274 @@
+﻿/*
+ Bootstrap v2.3.2 Tweaks for AudaMobile
+ -----------------------------------------------------------------------------------------
+ */
+ 
+* {
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+ 
+html,body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body {
+  padding-top:60px;
+    background-color: #e8e6e1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #484848;
+}
+
+body.with_sidebar {
+    background-image: url(../images/detail_page_sidebar.jpg);
+    background-size: 237px 850px;
+    background-repeat: repeat-y;
+    background-position: left bottom;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+h1 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    color: #e16b01;
+}
+
+h1.title {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #572901;
+    border-bottom: 1px solid #9e4a01;
+    line-height: 1.2;
+}
+
+
+a:link, a:visited {
+    color: #db7821;
+    text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+    color: #b05607;
+    text-decoration: none;
+}
+
+.well {
+    background-color: #fff;
+    border: 1px solid #c1beb6;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+.data_block .row-fluid {
+    padding: 18px 0 17px 0;
+    border-bottom: 1px solid #c1beb6;
+}
+
+.data_block .row-fluid:first-child {
+    padding: 0 0 17px 0;
+}
+
+.data_block .row-fluid:last-child {
+    padding: 18px 0 1px 0;
+    border-bottom: 0;
+}
+
+.data_block h3 {
+    margin: 0 0 6px 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    font-size: 1.1em;
+    line-height: 1;
+    color: #918884;
+    text-transform: uppercase;
+}
+
+.data_block p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.2em;
+}
+
+.field_header {
+    display: block;
+    background: url(../images/header_title_left_highlight.png) left top #eeede9 repeat-y;
+    margin: 1em 0 0 0;
+    padding: 17px 17px 17px 24px;
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1;
+    border: 1px solid #c1beb6;
+    border-bottom: 0;
+}
+
+.btn-primary {
+    background-color: #e47c21;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f2933e),to(#c86004));
+    background-image: -webkit-linear-gradient(top,#f2933e,#c86004);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary.disabled, 
+.btn-primary[disabled] {
+    background-color: #cb6408;
+}
+
+.btn-group.bootstrap-select > .btn:first-child,
+.btn-group.bootstrap-select > .btn:last-child,
+.btn-group.bootstrap-select > .dropdown-toggle {
+    -webkit-border-radius: 4px;
+}
+
+.btn {
+    padding: 10px 16px;
+    position: relative;
+    z-index: 100;
+    font-size: 17px;
+}
+
+.btn-group > .btn, 
+.btn-group > .dropdown-menu, 
+.btn-group > .popover,
+label {
+    font-size: 17px;
+}
+
+select, textarea, 
+input[type="text"], 
+input[type="password"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="color"], 
+.uneditable-input,
+.input-append .add-on, 
+.input-prepend .add-on {
+    padding: 10px;
+    font-size: 17px;
+}
+
+.dropdown-menu > li > a {
+    padding: 6px 12px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    z-index: 100;
+}
+
+input[type="radio"] {
+    -webkit-border-radius: 15px;
+}
+
+input[type="checkbox"]:checked, 
+input[type="radio"]:checked {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.radio, .checkbox {
+    min-height: 30px;
+    padding: 4px 0 0 40px;
+    line-height: 30px;
+}
+
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+    float: left;
+    margin: 0 0 0 -40px;
+}
+
+h3 button.btn.btn-small {
+    margin: -4px 0 0 0;
+    padding: 0px 8px 6px 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 .badge {
+    vertical-align: bottom;
+}
+
+.modal.fade.in {
+    top: 15%;
+}
+
+.modal select, .modal textarea, 
+.modal input[type="text"], 
+.modal input[type="password"], 
+.modal input[type="datetime"], 
+.modal input[type="datetime-local"], 
+.modal input[type="date"], 
+.modal input[type="month"], 
+.modal input[type="time"], 
+.modal input[type="week"], 
+.modal input[type="number"], 
+.modal input[type="email"], 
+.modal input[type="url"], 
+.modal input[type="search"], 
+.modal input[type="tel"], 
+.modal input[type="color"], 
+.modal .uneditable-input,
+.modal .input-append .add-on, 
+.modal .input-prepend .add-on {
+    height: auto;
+}
+
+
+/*
+ Non Bootstrap Elements
+ -----------------------------------------------------------------------------------------
+ */
+
+/*
+Search and results page
+*/
+
+@font-face {
+    font-family: 'Conv_UKNumberPlate';
+    src: url('fonts/UKNumberPlate.eot');
+    src: local('?'), url('fonts/UKNumberPlate.woff') format('woff'), url('fonts/UKNumberPlate.ttf') format('truetype'), url('fonts/UKNumberPlate.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body.search{
+    margin: 0;
+    font-family: Arial, Helvetica, Verdana;
+    font-size: 20px;
+    color: #3e3e3e;
+    background-color: #e8e6e1;
+    background-image: url(../images/search_page_main_bg.jpg);
+    background-size: 1024px 768px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+input[type="button"] {
+    -webkit-appearance: none;
+}
+
+.disableRow{
+    color:#888888;
+}
+
+.message,
+.errorMsg {
+    display: block;
+    margin: 16px auto;
+    padding: 16px 25px;
+    width: 416px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.message {
+    background: #dbdbdb;
+    color: #3e3e3e;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.errorMsg {
+    background: #a53333;
+    color: #fff;
+    text-shadow: 1px 1px 1px #530a0a;
+}
+
+.upperCase{
+    text-transform: uppercase;
+}
+
+table.audaMobileGrid {
+    border-collapse: collapse;
+    text-align:center;
+    width : 95%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#search_field_container {
+    position: relative;
+    display: block;
+    margin: 40px auto 0 auto;
+    background-image: url(../images/search_page_number_plate_bg.png);
+    background-size: 485px 110px;
+    background-repeat: no-repeat;
+    width: 485px;
+    height: 116px;
+}
+
+#txtRegistrationSearch {
+    position: absolute;
+    background-color: #f7bb05;
+    margin: 18px 0 0 76px;
+    padding: 4px 6px;
+    width: 308px;
+    height: 64px;
+    font-family: Conv_UKNumberPlate, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color : #383838;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 64px;
+    line-height:64px;
+    border: none;
+    letter-spacing: -3px; 
+}
+
+#imgSearch{
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    width: 79px;
+    height: 83px;
+}
+
+
+/* Search Results Page */
+.AxResultsContainer {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 110px;
+    max-height: 390px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.audaMobileGrid thead tr th {
+    margin: 0 0 6px 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    /*
+    font-size: 1.1em;
+    */
+    line-height: 1;
+    color: #918884;
+    text-transform: uppercase;
+    background-color: white;
+    border-bottom: 1px solid #7d3b00;
+    vertical-align: middle;
+    padding: 20px;
+    color: #e16b01;
+    font-size: 14px;
+    line-height: 1.2;
+    border-bottom: 1px solid #9e4a01;
+    text-rendering: optimizelegibility;
+}
+
+
+table.audaMobileGrid td {
+    background: -webkit-linear-gradient(#fafafa, #eee);
+    vertical-align:middle;
+    padding: 26px 20px;
+    font-size: 18px;
+    line-height: 1.2;
+    border-top: 1px solid #fff;
+    font-weight: cold;
+/*
+    border-bottom: 1px solid #d5d5d5;
+*/
+}
+
+table.audaMobileGrid tr.disabled td {
+    background: -webkit-linear-gradient(#fafafa, #eee);
+    color: #b4b4b4;
+}
+
+table.audaMobileGrid tr.touched td,
+table.audaMobileGrid tr:active td {
+    background: -webkit-linear-gradient(#dedede, #bcbcbc);
+/*
+    border-bottom: 1px solid #9d9d9d;
+*/
+}
+
+
+#RegistrationSearchResultAXSection {
+    margin-top: 150px;
+}
+
+
+/*
+Assessment details page
+*/
+ 
+ #app_wrapper {
+    position: relative;
+    width: 100%;
+}
+ 
+.ax-hidden {
+    display : none;
+    visibility: hidden; 
+}
+ 
+.ax-sidebar {
+    position: fixed;
+    display: block;
+    background-image: url(../images/detail_page_sidebar.jpg);
+    background-size: 237px 850px;
+    background-repeat: repeat-y;
+    background-position: left top;
+    width: 237px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ax-sidebar.closed {
+    margin-left: -237px;
+}
+
+.ax-sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.ax-sidebar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.ax-sidebar ul li a:hover,
+.ax-sidebar ul li a:focus,
+.ax-sidebar ul li a {
+    display: block;
+    background-color: transparent;
+    background-image: url(../images/icon_nav_arrow.png);
+    background-size: 23px 120px;
+    background-repeat: no-repeat;
+    background-position: 208px -56px;
+    margin: 0;
+    padding: 22px 20px 0 20px;
+    width: 197px;
+    height: 43px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: none;
+    text-decoration: none;
+    color: #fefefe;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-bottom: 1px solid rgba(0,0,0,0.20);
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.ax-sidebar ul li.active a,
+.nav-list > .active > a, 
+.nav-list > .active > a:hover, 
+.nav-list > .active > a:focus {
+    background-color: rgba(0,0,0,0.10);
+    background-position: 208px 3px;
+}
+
+.ax-sidebar ul li.empty a {
+    background-color: rgba(0,0,0,0.10);
+    background-image: none;
+    border-top: 1px solid rgba(0,0,0,0);
+}
+
+#body_section {
+    position: relative;
+    background-color: #e8e6e1;
+    margin-left: 237px;
+    width: 787px;
+    padding: 0 34px 80px 34px;
+    box-sizing: border-box;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+#body_section.full {
+    margin-left: 0;
+    width: 100%;
+}
+
+#body_section.nopadding {
+    padding: 0px 0px 0px 0px;
+}
+
+#body_section.nobgcolor {
+    background-color: rgba(0,0,0,0);
+}
+
+#claim_details section {
+    margin: 0 0 -65px 0;
+    padding: 82px 0 0 0;
+}
+
+/*
+ Toolbars
+ -----------------------------------------------------------------------------------------
+ */
+
+#toolbar { 
+    position: fixed;
+    display: block;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f49541), to(#c86003));
+    background-image: -webkit-linear-gradient(top, #f49541, #c86003);
+    margin-left: 237px;
+    width: 787px;
+    height: 66px;
+    border-bottom: 1px solid #7d3b00;
+    z-index: 1000;
+    box-sizing: border-box;
+/*
+    overflow: hidden;
+*/
+}
+
+#toolbar.full {
+    margin-left: 0;
+    width: 100%;
+}
+
+.drawer_trigger {
+    display: block;
+    float: left;
+    background-color: rgba(167,80,0,0.30);
+    width: 66px;
+    height: 66px;
+}
+
+.drawer_trigger a {
+    display: block;
+    background-image: url(../images/menu-active-icon.png);
+    background-position: left center;
+    background-size: 66px 66px;
+    background-repeat: no-repeat;
+    width: 66px;
+    height: 66px;
+    border-right: 1px solid rgba(167,80,0,0.70);
+    text-indent: -99999em;
+    cursor: pointer;
+}
+
+.drawer_trigger a:active {
+    background-image: url(../images/menu-click-icon.png);
+}
+
+
+
+ul#primary_toolbar_buttons {
+    float: left;
+    list-style: none;
+}
+
+ul#secondary_toolbar_buttons {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+ul#primary_toolbar_buttons>li,
+ul#secondary_toolbar_buttons>li {
+    float: left;
+    display: block;
+    margin: 0;
+    width: 66px;
+    height: 66px;
+    list-style: none;
+}
+
+ul#primary_toolbar_buttons li a.icon,
+ul#secondary_toolbar_buttons li a.icon {
+    float: left;
+    display: block;
+    background-size: 66px 66px;
+    background-repeat: no-repeat;
+    width: 66px;
+    height: 66px;
+    text-indent: -9999em;
+    cursor: pointer;
+}
+
+.toolbar-dropdown {
+    top : 50px;
+}
+
+.toolbar-dropdown > li > a {
+    padding: 28px 12px;
+}
+
+#repair_button a {
+    background-image: url(../images/damage-active-icon.png);
+}
+
+#repair_button a:active {
+    background-image: url(../images/damage-click-icon.png);
+}
+
+#repair_button a.disabled {
+    background-image: url(../images/damage-disabled-icon.png);
+}
+
+#calculate_button a {
+    background-image: url(../images/calculate-active-icon.png);
+}
+
+#calculate_button a:active {
+    background-image: url(../images/calculate-click-icon.png);
+}
+
+#calculate_button a.disabled {
+    background-image: url(../images/calculate-disabled-icon.png);
+}
+
+#report_button a {
+    background-image: url(../images/report-active-icon.png);
+}
+
+#report_button a:active {
+    background-image: url(../images/report-click-icon.png);
+}
+
+#report_button a.disabled {
+    background-image: url(../images/report-disabled-icon.png);
+}
+
+#save_button a {
+    background-image: url(../images/save-active-icon.png);
+}
+
+#save_button a:active {
+    background-image: url(../images/save-click-icon.png);
+}
+
+#save_button a.disabled {
+    background-image: url(../images/save-disabled-icon.png);
+}
+
+#close_button a {
+    background-image: url(../images/exit-active-icon.png);
+}
+
+#close_button a:active {
+    background-image: url(../images/exit-click-icon.png);
+}
+
+#close_button a.disabled {
+    background-image: url(../images/exit-disabled-icon.png);
+}
+
+#mail_button a {
+    background-image: url(../images/mail-active-icon.png);
+    margin-left: 12px;
+}
+
+#mail_button a:active {
+    background-image: url(../images/mail-click-icon.png);
+    margin-left: 12px;
+}
+
+#mail_button a.disabled {
+    background-image: url(../images/mail-disabled-icon.png);
+    margin-left: 12px;
+}
+
+#settings_button a.icon {
+    background-image: url(../images/20-gear-2@2x.png);
+    margin-left: 12px;
+}
+
+.counter {
+    position: absolute;
+    background: #cb6307;
+    margin: 10px 0 0 10px;;
+    padding: 0 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 11px;
+    -webkit-border-radius: 10px;
+}
+
+ 
+/*
+ Damage Direction
+ -----------------------------------------------------------------------------------------
+ */
+
+#damage_direction {
+    display: block;
+    background-image: url(../images/vehicle_crash_direction_base.jpg);
+    background-repeat: no-repeat;
+    background-size: 390px 213px;
+    margin: 0 auto 2em auto;
+    width: 390px;
+    height: 213px;
+}
+
+.full #damage_direction {
+    background-size: 526px 288px;
+    width: 526px;
+    height: 288px;
+}
+
+#damage_direction_arrow,
+#direction_buttons {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 390px 213px;
+    margin: 0;
+    width: 390px;
+    height: 213px;
+}
+
+.full #damage_direction_arrow,
+.full #direction_buttons {
+    background-size: 526px 288px;
+    width: 526px;
+    height: 288px;
+}
+
+#damage_direction_arrow {
+    position: absolute;
+}
+
+#direction_buttons div {
+    position: absolute;
+    display: block;
+    background-image: url(../images/directional_tap_button.png);
+    background-size: 36px 72px;
+    background-position: 0 -36px;
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999em;
+    cursor: pointer;
+}
+
+
+.full #direction_buttons div {
+    background-size: 42px 84px;
+    background-position: 0 -42px;
+    width: 42px;
+    height: 42px;
+}
+
+#direction_buttons div.active {
+    background-position: 0 0;
+}
+
+#dd_centre_front_button {
+    top: 88px;
+}
+
+.full #dd_centre_front_button {
+    top: 121px;
+}
+
+#dd_right_hand_front_button {
+
+}
+
+#dd_right_hand_side_button {
+    left: 176px;
+}
+
+.full #dd_right_hand_side_button {
+    left: 242px;
+}
+
+#dd_right_hand_rear_button {
+    left: 353px;
+}
+
+.full #dd_right_hand_rear_button {
+    left: 484px;
+}
+
+#dd_centre_rear_button {
+    top: 88px;
+    left: 353px;
+}
+
+.full #dd_centre_rear_button {
+    top: 121px;
+    left: 484px;
+}
+
+#dd_left_hand_rear_button {
+    top: 177px;
+    left: 353px;
+}
+
+.full #dd_left_hand_rear_button {
+    top: 246px;
+    left: 484px;
+}
+
+#dd_left_hand_side_button {
+    top: 177px;
+    left: 176px;
+}
+
+.full #dd_left_hand_side_button {
+    top: 246px;
+    left: 242px;
+}
+
+#dd_left_hand_front_button {
+    top: 177px;
+}
+
+.full #dd_left_hand_front_button {
+    top: 246px;
+}
+
+/*
+ Damage Areas
+ -----------------------------------------------------------------------------------------
+ */
+
+#damage_areas {
+    position: relative;
+    display: block;
+    margin: 0 auto 2em auto;
+    width: 390px;
+    height: 194px;
+}
+
+#damage_areas span {
+    position: absolute;
+    display: block;
+}
+
+#damage_areas input {
+    position: absolute;
+    top: -99999em;
+}
+
+#damage_areas span label {
+    display: block;
+    background-image: url(../images/vehicle_touch_zones.png);
+    background-repeat: no-repeat;
+    background-size: 390px 387px;
+    text-indent: -9999em;
+    margin: 0;
+}
+
+#da_centre_front_button {
+    top: 72px;
+    width: 112px;
+    height: 51px;
+}
+
+#da_centre_front_button label {
+    background-position: 0 -72px;
+    width: 112px;
+    height: 51px;
+}
+
+#da_centre_front_button label.active {
+    background-position: 0 -266px;
+}
+
+#da_right_hand_front_button {
+    width: 112px;
+    height: 72px;
+}
+
+#da_right_hand_front_button label {
+    background-position: 0 0;
+    width: 112px;
+    height: 72px;
+}
+
+#da_right_hand_front_button label.active {
+    background-position: 0 -194px;
+}
+
+#da_right_hand_side_button {
+    left: 112px;
+    width: 156px;
+    height: 72px;
+}
+
+#da_right_hand_side_button label {
+    background-position: -112px 0;
+    width: 156px;
+    height: 72px;
+}
+
+#da_right_hand_side_button label.active {
+    background-position: -112px -194px;
+}
+
+#da_right_hand_rear_button {
+    left: 268px;
+    width: 122px;
+    height: 72px;
+}
+
+#da_right_hand_rear_button label {
+    background-position: -268px 0;
+    width: 122px;
+    height: 72px;
+}
+
+#da_right_hand_rear_button label.active {
+    background-position: -268px -194px;
+}
+
+#da_centre_rear_button {
+    top: 72px;
+    left: 268px;
+    width: 122px;
+    height: 51px;
+}
+
+#da_centre_rear_button label {
+    background-position: -268px -72px;
+    width: 122px;
+    height: 51px;
+}
+
+#da_centre_rear_button label.active {
+    background-position: -268px -266px;
+}
+
+#da_left_hand_rear_button {
+    top: 123px;
+    left: 268px;
+    width: 122px;
+    height: 71px;
+}
+
+#da_left_hand_rear_button label {
+    background-position: -268px -123px;
+    width: 122px;
+    height: 71px;
+}
+
+#da_left_hand_rear_button label.active {
+    background-position: -268px -317px;
+}
+
+#da_left_hand_side_button {
+    top: 123px;
+    left: 112px;
+    width: 156px;
+    height: 71px;
+}
+
+#da_left_hand_side_button label {
+    background-position: -112px -123px;
+    width: 156px;
+    height: 71px;
+}
+
+#da_left_hand_side_button label.active {
+    background-position: -112px -317px;
+}
+
+#da_left_hand_front_button {
+    top: 123px;
+    width: 112px;
+    height: 71px;
+}
+
+#da_left_hand_front_button label {
+    background-position: 0 -123px;
+    width: 112px;
+    height: 71px;
+}
+
+#da_left_hand_front_button label.active {
+    background-position: 0 -317px;
+}
+
+#da_roof_button {
+    top: 72px;
+    left: 112px;
+    width: 156px;
+    height: 51px;
+}
+
+#da_roof_button label {
+    background-position: -112px -72px;
+    width: 156px;
+    height: 51px;
+}
+
+#da_roof_button label.active {
+    background-position: -112px -266px;
+}
+
+.full #damage_areas {
+    width: 526px;
+    height: 261px;
+}
+
+.full #damage_areas span label {
+    background-size: 526px 522px;
+}
+
+
+.full #da_centre_front_button {
+    top: 98px;
+    width: 151px;
+    height: 69px;
+}
+
+.full #da_centre_front_button label {
+    background-position: 0 -98px;
+    width: 151px;
+    height: 69px;
+}
+
+.full #da_centre_front_button label.active {
+    background-position: 0 -359px;
+}
+
+.full #da_right_hand_front_button {
+    width: 151px;
+    height: 98px;
+}
+
+.full #da_right_hand_front_button label {
+    background-position: 0 0;
+    width: 151px;
+    height: 98px;
+}
+
+.full #da_right_hand_front_button label.active {
+    background-position: 0 -261px;
+}
+
+.full #da_right_hand_side_button {
+    left: 151px;
+    width: 212px;
+    height: 98px;
+}
+
+.full #da_right_hand_side_button label {
+    background-position: -151px 0;
+    width: 212px;
+    height: 98px;
+}
+
+.full #da_right_hand_side_button label.active {
+    background-position: -151px -261px;
+}
+
+.full #da_right_hand_rear_button {
+    left: 363px;
+    width: 164px;
+    height: 98px;
+}
+
+.full #da_right_hand_rear_button label {
+    background-position: -363px 0;
+    width: 164px;
+    height: 98px;
+}
+
+.full #da_right_hand_rear_button label.active {
+    background-position: -363px -261px;
+}
+
+.full #da_centre_rear_button {
+    top: 98px;
+    left: 363px;
+    width: 164px;
+    height: 69px;
+}
+
+.full #da_centre_rear_button label {
+    background-position: -363px -98px;
+    width: 164px;
+    height: 69px;
+}
+
+.full #da_centre_rear_button label.active {
+    background-position: -363px -359px;
+}
+
+.full #da_left_hand_rear_button {
+    top: 167px;
+    left: 363px;
+    width: 164px;
+    height: 95px;
+}
+
+.full #da_left_hand_rear_button label {
+    background-position: -363px -167px;
+    width: 164px;
+    height: 95px;
+}
+
+.full #da_left_hand_rear_button label.active {
+    background-position: -363px -428px;
+}
+
+.full #da_left_hand_side_button {
+    top: 167px;
+    left: 151px;
+    width: 212px;
+    height: 95px;
+}
+
+.full #da_left_hand_side_button label {
+    background-position: -151px -167px;
+    width: 212px;
+    height: 95px;
+}
+
+.full #da_left_hand_side_button label.active {
+    background-position: -151px -428px;
+}
+
+.full #da_left_hand_front_button {
+    top: 167px;
+    width: 151px;
+    height: 95px;
+}
+
+.full #da_left_hand_front_button label {
+    background-position: 0 -167px;
+    width: 151px;
+    height: 95px;
+}
+
+.full #da_left_hand_front_button label.active {
+    background-position: 0 -428px;
+}
+
+.full #da_roof_button {
+    top: 98px;
+    left: 151px;
+    width: 212px;
+    height: 69px;
+}
+
+.full #da_roof_button label {
+    background-position: -151px -98px;
+    width: 212px;
+    height: 69px;
+}
+
+.full #da_roof_button label.active {
+    background-position: -151px -359px;
+}
+
+/*
+ Notes Section
+ -----------------------------------------------------------------------------------------
+ */
+
+#notes .well {
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+    z-index: 2;
+}
+
+#notes .well.accordion {
+    padding: 3px 19px 19px 19px;
+}
+
+.well .accordion-group {
+    border: none;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+#notes .accordion-heading .accordion-toggle {
+    padding: 3px 0;
+    border-bottom: 1px solid #eae8e3;
+    line-height: 1;
+}
+
+#notes .accordion-heading .accordion-toggle .row-fluid {
+    padding: 1em 0;
+}
+
+#notes .accordion-inner {
+    background: #f7f6f4;
+    border: none;
+    border-bottom: 1px solid #eae8e3;
+}
+
+#notes .accordion-inner blockquote {
+    border: none;
+    margin: 0;
+    padding: 3px 0;
+}
+
+#debug {
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+    z-index: 1;
+}
+
+#notes .list-heading {
+    padding: 1em 0;
+    border-bottom: 1px solid #eae8e3;
+    font-weight: bold;
+}
+
+#notes .row-fluid [class*="span"] {
+    line-height: 1.3em;
+    min-height: 1em;
+}
+
+#footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:22px;
+  width:100%;
+  background:#999; 
+}
+/* IE 6 */
+* html #footer {
+  position:absolute;
+  top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+ 
+/* Add disabled state for items in sidebar*/
+.nav > li.disabled {
+  .opacity(40);
+  pointer-events: none;
+}
+.nav > li.disabled > a:hover {
+  cursor: default;
+  text-decoration: none;
+  background-color: inherit;
+  color:#999999;
+}
+
