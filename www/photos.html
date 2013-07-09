@@ -35,8 +35,8 @@
 
         $('#Photos').append('<li><img src="' + imageData + '"/></li>');
 
-        images.Push(imageData);
-        window.localStorage.setItem("photos", images);
+        images.push(imageData);
+        window.localStorage.setItem("photos", JSON.stringify(images));
     }
 
     function onFail(e){
@@ -54,10 +54,8 @@
         var imageData = 'http://i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg';
         $('#Photos').append('<li><img src="' + imageData + '"/></li>');
 
-        images.Push(imageData);
-        window.localStorage.setItem("photos", images);
-
-        window.localStorage.setItem('test', 'value10');
+        images.push(imageData);
+        window.localStorage.setItem("photos", JSON.stringify(images));
     }
 
     /**
@@ -70,22 +68,18 @@
     }
 
     $(document).ready(function () {
-        alert('doc ready');
 
-        images = window.localStorage.getItem("photos");
+        var jString = window.localStorage.getItem("photos");
+        if(jString != undefined)
+            images = JSON.parse(jString);
 
         if (images == undefined) {
             images = new Array();
         }
 
-        alert(images);
-
         $.each(images, function(key, value) {
             $('#Photos').append('<li><img src="' + value + '"/></li>');
-            alert('adding photo');
         });
-
-        alert(window.localStorage.getItem('test'));
 
     });
 
