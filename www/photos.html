@@ -62,6 +62,9 @@
 
     $(document).ready(function () {
         images = window.localStorage.getItem("photo_data");
+        if (images == undefined) {
+            images = new Array();
+        }
 
         $.each(images, function(key, value) {
             $('#Photos').append('<li><img src="' + imageData + '"/></li>');
