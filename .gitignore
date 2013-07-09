@@ -36,6 +36,10 @@ local.properties
 */
 !www/
 !www/*
+AudaRetail.csproj
+Global.*
+*.config
+favicon.ico
 
 
 ## Ignore Visual Studio temporary files, build results, and
