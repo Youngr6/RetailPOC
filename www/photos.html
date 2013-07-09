@@ -38,34 +38,22 @@
     */
     function captureImage() {
 
-        navigator.device.capture.captureImage(
-            function (mediaFiles) {
+        navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
 
-                document.getElementById('capture_status').innerHTML = "Success. Captured " + mediaFiles.length + " media file(s).";
+    }
 
-                if (mediaFiles.length <= 0) return;
+    function onPhotoDataSuccess(imageData) {
+        var img = document.getElementById('camera_image');
+        img.style.visibility = "visible";
+        img.style.display = "block";
+        img.src = "data:image/jpeg;base64," + imageData;
 
-                mediaFile = mediaFiles[0];
+    }
 
-                document.getElementById('name').innerHTML = mediaFile.name;
-                document.getElementById('fullPath').innerHTML = mediaFile.fullPath;
-                document.getElementById('size').innerHTML = mediaFile.size;
-                document.getElementById('lastModifiedDate').innerHTML = mediaFile.lastModifiedDate;
-                document.getElementById('type').innerHTML = mediaFile.type;
-
-                clearMediaPlaceholder();
-
-                var img = document.getElementById('camera_image');
-                img.style.visibility = "visible";
-                img.style.display = "block";
-                img.src = mediaFile.fullPath;
-            },
-            function (e) {
-                console.log("Error getting picture: " + e);
-                document.getElementById('capture_status').innerHTML = "Error getting picture.";
-            },
-            { limit: 1 });
-    };
+    function onFail(e){
+        console.log("Error getting picture: " + e);
+        document.getElementById('capture_status').innerHTML = "Error getting picture.";
+    }
 
     /**
     * Capture Video
@@ -127,7 +115,7 @@
 </script>
 
 </head>
-<body onload="init();">
+<body onload="init();" style="margin-bottom:30px;">
 
         <div data-role="page" data-title="Photos" id="PhotosPage">
 
