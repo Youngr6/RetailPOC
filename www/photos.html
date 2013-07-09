@@ -37,6 +37,8 @@
     */
     function captureImage() {
 
+        alert('captureImage called');
+
         navigator.device.capture.captureImage(
             function (mediaFiles) {
 
@@ -126,7 +128,7 @@
 </script>
 
 </head>
-<body>
+<body onload="init();">
 
         <div data-role="page" data-title="Photos" id="PhotosPage">
 
