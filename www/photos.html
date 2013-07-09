@@ -16,102 +16,28 @@
 
 <script type="text/javascript" charset="utf-8">
 
-
-    // last captured media file
-    var mediaFile = null;
-
-    function clearMediaPlaceholder() {
-        document.getElementById('audio_player').setAttribute('style', 'visibility:hidden;display:none;');
-
-        var img = document.getElementById('camera_image');
-        img.style.visibility = "hidden";
-        img.style.display = "none";
-        img.src = "";
-    }
-
     //-------------------------------------------------------------------------
     // Capture
     //-------------------------------------------------------------------------
-
-    /**
-    * Capture image
-    */
-    function captureImage() {
-        navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-    }
-
-    function capturePhotoWithData() {
-        // Take picture using device camera and retrieve image as base64-encoded string
-        navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
-    }
 
     function capturePhotoWithFile() {
         navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
     }
 
 
-
     function onPhotoFileSuccess(imageData) {
-        var smallImage = document.getElementById('smallImage');
+
+        var smallImage = document.getElementById('camera_image');
         smallImage.style.display = "block";
         smallImage.src = imageData;
 
+        $('#Photos').append('<li><img src="' + imageData + '"/></li>');
     }
-
-    function onPhotoDataSuccess(imageData) {
-        // Get image handle
-        //
-        var smallImage = document.getElementById('smallImage');
-
-        // Unhide image elements
-        //
-        smallImage.style.display = 'block';
-
-        // Show the captured photo
-        // The inline CSS rules are used to resize the image
-        //
-        smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
 
     function onFail(e){
         console.log("Error getting picture: " + e);
         document.getElementById('capture_status').innerHTML = "Error getting picture.";
     }
-
-    /**
-    * Capture Video
-    */
-    function captureVideo() {
-
-        navigator.device.capture.captureVideo(
-            function (mediaFiles) {
-
-                document.getElementById('capture_status').innerHTML = "Success. Captured " + mediaFiles.length + " media file(s).";
-
-                if (mediaFiles.length <= 0) return;
-
-                mediaFile = mediaFiles[0];
-
-                document.getElementById('name').innerHTML = mediaFile.name;
-                document.getElementById('fullPath').innerHTML = mediaFile.fullPath;
-                document.getElementById('size').innerHTML = mediaFile.size;
-                document.getElementById('lastModifiedDate').innerHTML = mediaFile.lastModifiedDate;
-                document.getElementById('type').innerHTML = mediaFile.type;
-
-                clearMediaPlaceholder();
-
-                var player = document.getElementById('video_player');
-                player.setAttribute('style', 'visibility:visible;');
-                player.src = mediaFile.fullPath;
-                console.log("src: " + mediaFile.fullPath);
-            },
-            function (e) {
-                console.log("Error getting video: " + e);
-                document.getElementById('capture_status').innerHTML = "Error getting video.";
-            },
-            { limit: 1 });
-    };
 
     /**
     * Function called when page has finished loading.
@@ -120,20 +46,6 @@
         document.addEventListener("deviceready", function () {
             console.log("Device=" + device.platform + " " + device.version);
         }, false);
-    }
-
-    /**
-    * Function to play last captured media.
-    */
-    function playMedia() {
-        if (typeof mediaFile !== 'undefined') {
-            mediaFile.play(
-                null,
-                function (e) {
-                    console.log("Error playing media: " + e);
-                    document.getElementById('capture_status').innerHTML = "Error playing media.";
-                });
-        }
     }
 
 </script>
@@ -154,37 +66,16 @@
           </div>
         </div>
 
+        <ul id="Photos">
+        </ul>
+
     <h1>Capture</h1>
     <div id="info">
-        Status: <span id="capture_status"></span><br/>
         <img style="width:120px;height:120px;" id="camera_image" src="" />
-        <video  width="150" height="150" id="video_player" src=""
-            onclick="playMedia();" >
-            Browser does not support the video tag.
-        </video>
-
-
-        <div><table width="100%">
-            <tr><td width="20%">Name:</td><td id="name"> </td></tr>
-            <tr><td width="20%">FullPath:</td><td id="fullPath"> </td></tr>
-            <tr><td width="20%">Type:</td><td id="type"> </td></tr>
-            <tr><td width="20%">Size:</td><td id="size"> </td></tr>
-            <tr><td width="20%">Modified:</td><td id="lastModifiedDate"> </td></tr>
-        </table></div>
-
-        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-        <img style="display:none;" id="largeImage" src="" />
-
     </div>
         <h2>Actions</h2>
 
-        <button onclick="capturePhotoWithData();">Capture Photo With Image Data</button> <br>
-        <button onclick="capturePhotoWithFile();">Capture Photo With Image File URI</button> <br>
-
-        <div class="btn-group">
-            <a href="#" class="btn" onclick="captureImage();">Image</a>
-            <a href="#" class="btn" onclick="captureVideo();">Video</a>
-        </div>
+        <button onclick="capturePhotoWithFile();">Capture Photo</button> 
 
             <br />
             <br />
