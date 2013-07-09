@@ -12,6 +12,119 @@
 
     <script src="scripts/jquery-1.9.1.js"></script>
     <script src="scripts/bootstrap.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+
+    // last captured media file
+    var mediaFile = null;
+
+    function clearMediaPlaceholder() {
+        document.getElementById('audio_player').setAttribute('style', 'visibility:hidden;display:none;');
+
+        var img = document.getElementById('camera_image');
+        img.style.visibility = "hidden";
+        img.style.display = "none";
+        img.src = "";
+    }
+
+    //-------------------------------------------------------------------------
+    // Capture
+    //-------------------------------------------------------------------------
+
+    /**
+    * Capture image
+    */
+    function captureImage() {
+
+        navigator.device.capture.captureImage(
+            function (mediaFiles) {
+
+                document.getElementById('capture_status').innerHTML = "Success. Captured " + mediaFiles.length + " media file(s).";
+
+                if (mediaFiles.length <= 0) return;
+
+                mediaFile = mediaFiles[0];
+
+                document.getElementById('name').innerHTML = mediaFile.name;
+                document.getElementById('fullPath').innerHTML = mediaFile.fullPath;
+                document.getElementById('size').innerHTML = mediaFile.size;
+                document.getElementById('lastModifiedDate').innerHTML = mediaFile.lastModifiedDate;
+                document.getElementById('type').innerHTML = mediaFile.type;
+
+                clearMediaPlaceholder();
+
+                var img = document.getElementById('camera_image');
+                img.style.visibility = "visible";
+                img.style.display = "block";
+                img.src = mediaFile.fullPath;
+            },
+            function (e) {
+                console.log("Error getting picture: " + e);
+                document.getElementById('capture_status').innerHTML = "Error getting picture.";
+            },
+            { limit: 1 });
+    };
+
+    /**
+    * Capture Video
+    */
+    function captureVideo() {
+
+        navigator.device.capture.captureVideo(
+            function (mediaFiles) {
+
+                document.getElementById('capture_status').innerHTML = "Success. Captured " + mediaFiles.length + " media file(s).";
+
+                if (mediaFiles.length <= 0) return;
+
+                mediaFile = mediaFiles[0];
+
+                document.getElementById('name').innerHTML = mediaFile.name;
+                document.getElementById('fullPath').innerHTML = mediaFile.fullPath;
+                document.getElementById('size').innerHTML = mediaFile.size;
+                document.getElementById('lastModifiedDate').innerHTML = mediaFile.lastModifiedDate;
+                document.getElementById('type').innerHTML = mediaFile.type;
+
+                clearMediaPlaceholder();
+
+                var player = document.getElementById('video_player');
+                player.setAttribute('style', 'visibility:visible;');
+                player.src = mediaFile.fullPath;
+                console.log("src: " + mediaFile.fullPath);
+            },
+            function (e) {
+                console.log("Error getting video: " + e);
+                document.getElementById('capture_status').innerHTML = "Error getting video.";
+            },
+            { limit: 1 });
+    };
+
+    /**
+    * Function called when page has finished loading.
+    */
+    function init() {
+        document.addEventListener("deviceready", function () {
+            console.log("Device=" + device.platform + " " + device.version);
+        }, false);
+    }
+
+    /**
+    * Function to play last captured media.
+    */
+    function playMedia() {
+        if (typeof mediaFile !== 'undefined') {
+            mediaFile.play(
+                null,
+                function (e) {
+                    console.log("Error playing media: " + e);
+                    document.getElementById('capture_status').innerHTML = "Error playing media.";
+                });
+        }
+    }
+
+</script>
+
 </head>
 <body>
 
@@ -22,15 +135,37 @@
             <div class="container">
               <a class="brand" href="#">AudaRetail</a>
                 <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.html">Close job</a></li>
                 </ul>
             </div>
           </div>
         </div>
 
-            <p>Placeholder for photo capture</p>
+    <h1>Capture</h1>
+    <div id="info">
+        Status: <span id="capture_status"></span><br/>
+        <img style="width:120px;height:120px;visibility:hidden;display:none;" id="camera_image" src="" />
+        <video style="visibility:hidden;display:none;"  width="150" height="150" id="video_player" src=""
+            onclick="playMedia();" >
+            Browser does not support the video tag.
+        </video>
+
+
+        <div><table width="100%">
+            <tr><td width="20%">Name:</td><td id="name"> </td></tr>
+            <tr><td width="20%">FullPath:</td><td id="fullPath"> </td></tr>
+            <tr><td width="20%">Type:</td><td id="type"> </td></tr>
+            <tr><td width="20%">Size:</td><td id="size"> </td></tr>
+            <tr><td width="20%">Modified:</td><td id="lastModifiedDate"> </td></tr>
+        </table></div>
+
+    </div>
+        <h2>Actions</h2>
+
+        <div class="btn-group">
+            <a href="#" class="btn" onclick="captureImage();">Image</a>
+            <a href="#" class="btn" onclick="captureVideo();">Video</a>
+        </div>
 
           <div id="footer" class="navbar">
             <div class="navbar-inner">
