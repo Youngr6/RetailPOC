@@ -16,6 +16,8 @@
 
 <script type="text/javascript" charset="utf-8">
 
+    var images = new Array();
+
     //-------------------------------------------------------------------------
     // Capture
     //-------------------------------------------------------------------------
@@ -32,11 +34,21 @@
         smallImage.src = imageData;
 
         $('#Photos').append('<li><img src="' + imageData + '"/></li>');
+
+        images.Push(imageData);
+
+        window.localStorage.setItem("photo_data", images);
     }
 
     function onFail(e){
         console.log("Error getting picture: " + e);
         document.getElementById('capture_status').innerHTML = "Error getting picture.";
+    }
+
+    function clearImages() {
+        images = new Array();
+        window.localStorage.setItem("photo_data", images);
+        $('#Photos').html("");
     }
 
     /**
@@ -47,6 +59,14 @@
             console.log("Device=" + device.platform + " " + device.version);
         }, false);
     }
+
+    $(document).ready(function () {
+        images = window.localStorage.getItem("photo_data");
+
+        $.each(images, function(key, value) {
+            $('#Photos').append('<li><img src="' + imageData + '"/></li>');
+        });
+    });
 
 </script>
 
@@ -76,6 +96,7 @@
         <h2>Actions</h2>
 
         <button onclick="capturePhotoWithFile();">Capture Photo</button> 
+        <button onclick="clearImages();">Clear images</button>
 
             <br />
             <br />
