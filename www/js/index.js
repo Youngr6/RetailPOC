@@ -44,7 +44,7 @@ var app = {
 
 
 $(document).bind("mobileinit", function () {
-    $.mobile.page.prototype.options.addBackBtn = true;
+    //$.mobile.page.prototype.options.addBackBtn = true;
 });
 
 $(document).ready(function () {
