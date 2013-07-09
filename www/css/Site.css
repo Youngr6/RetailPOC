@@ -20,7 +20,7 @@ body {
 }
 
 body.with_sidebar {
-    background-image: url(../images/detail_page_sidebar.jpg);
+    background-image: url(../img/detail_page_sidebar.jpg);
     background-size: 237px 850px;
     background-repeat: repeat-y;
     background-position: left bottom;
@@ -105,7 +105,7 @@ a:hover, a:active, a:focus {
 
 .field_header {
     display: block;
-    background: url(../images/header_title_left_highlight.png) left top #eeede9 repeat-y;
+    background: url(../img/header_title_left_highlight.png) left top #eeede9 repeat-y;
     margin: 1em 0 0 0;
     padding: 17px 17px 17px 24px;
     font-weight: bold;
@@ -266,7 +266,7 @@ body.search{
     font-size: 20px;
     color: #3e3e3e;
     background-color: #e8e6e1;
-    background-image: url(../images/search_page_main_bg.jpg);
+    background-image: url(../img/search_page_main_bg.jpg);
     background-size: 1024px 768px;
     background-repeat: no-repeat;
     background-position: center top;
@@ -321,7 +321,7 @@ table.audaMobileGrid {
     position: relative;
     display: block;
     margin: 40px auto 0 auto;
-    background-image: url(../images/search_page_number_plate_bg.png);
+    background-image: url(../img/search_page_number_plate_bg.png);
     background-size: 485px 110px;
     background-repeat: no-repeat;
     width: 485px;
@@ -438,7 +438,7 @@ Assessment details page
 .ax-sidebar {
     position: fixed;
     display: block;
-    background-image: url(../images/detail_page_sidebar.jpg);
+    background-image: url(../img/detail_page_sidebar.jpg);
     background-size: 237px 850px;
     background-repeat: repeat-y;
     background-position: left top;
@@ -468,7 +468,7 @@ Assessment details page
 .ax-sidebar ul li a {
     display: block;
     background-color: transparent;
-    background-image: url(../images/icon_nav_arrow.png);
+    background-image: url(../img/icon_nav_arrow.png);
     background-size: 23px 120px;
     background-repeat: no-repeat;
     background-position: 208px -56px;
@@ -566,7 +566,7 @@ Assessment details page
 
 .drawer_trigger a {
     display: block;
-    background-image: url(../images/menu-active-icon.png);
+    background-image: url(../img/menu-active-icon.png);
     background-position: left center;
     background-size: 66px 66px;
     background-repeat: no-repeat;
@@ -578,7 +578,7 @@ Assessment details page
 }
 
 .drawer_trigger a:active {
-    background-image: url(../images/menu-click-icon.png);
+    background-image: url(../img/menu-click-icon.png);
 }
 
 
@@ -625,82 +625,82 @@ ul#secondary_toolbar_buttons li a.icon {
 }
 
 #repair_button a {
-    background-image: url(../images/damage-active-icon.png);
+    background-image: url(../img/damage-active-icon.png);
 }
 
 #repair_button a:active {
-    background-image: url(../images/damage-click-icon.png);
+    background-image: url(../img/damage-click-icon.png);
 }
 
 #repair_button a.disabled {
-    background-image: url(../images/damage-disabled-icon.png);
+    background-image: url(../img/damage-disabled-icon.png);
 }
 
 #calculate_button a {
-    background-image: url(../images/calculate-active-icon.png);
+    background-image: url(../img/calculate-active-icon.png);
 }
 
 #calculate_button a:active {
-    background-image: url(../images/calculate-click-icon.png);
+    background-image: url(../img/calculate-click-icon.png);
 }
 
 #calculate_button a.disabled {
-    background-image: url(../images/calculate-disabled-icon.png);
+    background-image: url(../img/calculate-disabled-icon.png);
 }
 
 #report_button a {
-    background-image: url(../images/report-active-icon.png);
+    background-image: url(../img/report-active-icon.png);
 }
 
 #report_button a:active {
-    background-image: url(../images/report-click-icon.png);
+    background-image: url(../img/report-click-icon.png);
 }
 
 #report_button a.disabled {
-    background-image: url(../images/report-disabled-icon.png);
+    background-image: url(../img/report-disabled-icon.png);
 }
 
 #save_button a {
-    background-image: url(../images/save-active-icon.png);
+    background-image: url(../img/save-active-icon.png);
 }
 
 #save_button a:active {
-    background-image: url(../images/save-click-icon.png);
+    background-image: url(../img/save-click-icon.png);
 }
 
 #save_button a.disabled {
-    background-image: url(../images/save-disabled-icon.png);
+    background-image: url(../img/save-disabled-icon.png);
 }
 
 #close_button a {
-    background-image: url(../images/exit-active-icon.png);
+    background-image: url(../img/exit-active-icon.png);
 }
 
 #close_button a:active {
-    background-image: url(../images/exit-click-icon.png);
+    background-image: url(../img/exit-click-icon.png);
 }
 
 #close_button a.disabled {
-    background-image: url(../images/exit-disabled-icon.png);
+    background-image: url(../img/exit-disabled-icon.png);
 }
 
 #mail_button a {
-    background-image: url(../images/mail-active-icon.png);
+    background-image: url(../img/mail-active-icon.png);
     margin-left: 12px;
 }
 
 #mail_button a:active {
-    background-image: url(../images/mail-click-icon.png);
+    background-image: url(../img/mail-click-icon.png);
     margin-left: 12px;
 }
 
 #mail_button a.disabled {
-    background-image: url(../images/mail-disabled-icon.png);
+    background-image: url(../img/mail-disabled-icon.png);
     margin-left: 12px;
 }
 
 #settings_button a.icon {
-    background-image: url(../images/20-gear-2@2x.png);
+    background-image: url(../img/20-gear-2@2x.png);
     margin-left: 12px;
 }
 
@@ -723,7 +723,7 @@ ul#secondary_toolbar_buttons li a.icon {
 
 #damage_direction {
     display: block;
-    background-image: url(../images/vehicle_crash_direction_base.jpg);
+    background-image: url(../img/vehicle_crash_direction_base.jpg);
     background-repeat: no-repeat;
     background-size: 390px 213px;
     margin: 0 auto 2em auto;
@@ -762,7 +762,7 @@ ul#secondary_toolbar_buttons li a.icon {
 #direction_buttons div {
     position: absolute;
     display: block;
-    background-image: url(../images/directional_tap_button.png);
+    background-image: url(../img/directional_tap_button.png);
     background-size: 36px 72px;
     background-position: 0 -36px;
     background-repeat: no-repeat;
@@ -875,7 +875,7 @@ ul#secondary_toolbar_buttons li a.icon {
 
 #damage_areas span label {
     display: block;
-    background-image: url(../images/vehicle_touch_zones.png);
+    background-image: url(../img/vehicle_touch_zones.png);
     background-repeat: no-repeat;
     background-size: 390px 387px;
     text-indent: -9999em;
