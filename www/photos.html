@@ -37,18 +37,42 @@
     * Capture image
     */
     function captureImage() {
+        navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+    }
 
+    function capturePhotoWithData() {
+        // Take picture using device camera and retrieve image as base64-encoded string
         navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+    }
+
+    function capturePhotoWithFile() {
+        navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+    }
+
+
+
+    function onPhotoFileSuccess(imageData) {
+        var smallImage = document.getElementById('smallImage');
+        smallImage.style.display = "block";
+        smallImage.src = imageData;
 
     }
 
     function onPhotoDataSuccess(imageData) {
-        var img = document.getElementById('camera_image');
-        img.style.visibility = "visible";
-        img.style.display = "block";
-        img.src = "data:image/jpeg;base64," + imageData;
+        // Get image handle
+        //
+        var smallImage = document.getElementById('smallImage');
 
+        // Unhide image elements
+        //
+        smallImage.style.display = 'block';
+
+        // Show the captured photo
+        // The inline CSS rules are used to resize the image
+        //
+        smallImage.src = "data:image/jpeg;base64," + imageData;
     }
+
 
     function onFail(e){
         console.log("Error getting picture: " + e);
@@ -148,13 +172,23 @@
             <tr><td width="20%">Modified:</td><td id="lastModifiedDate"> </td></tr>
         </table></div>
 
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+        <img style="display:none;" id="largeImage" src="" />
+
     </div>
         <h2>Actions</h2>
+
+        <button onclick="capturePhotoWithData();">Capture Photo With Image Data</button> <br>
+        <button onclick="capturePhotoWithFile();">Capture Photo With Image File URI</button> <br>
 
         <div class="btn-group">
             <a href="#" class="btn" onclick="captureImage();">Image</a>
             <a href="#" class="btn" onclick="captureVideo();">Video</a>
         </div>
+
+            <br />
+            <br />
+            <br />
 
           <div id="footer" class="navbar">
             <div class="navbar-inner">
@@ -169,6 +203,8 @@
                   </div>
             </div>
           </div>
+
+
 
         </div>
 </body>
