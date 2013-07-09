@@ -16,7 +16,7 @@
 
 <script type="text/javascript" charset="utf-8">
 
-    var images = new Array();
+    var images;
 
     //-------------------------------------------------------------------------
     // Capture
@@ -36,8 +36,7 @@
         $('#Photos').append('<li><img src="' + imageData + '"/></li>');
 
         images.Push(imageData);
-
-        window.localStorage.setItem("photo_data", images);
+        window.localStorage.setItem("photos", images);
     }
 
     function onFail(e){
@@ -47,8 +46,18 @@
 
     function clearImages() {
         images = new Array();
-        window.localStorage.setItem("photo_data", images);
+        window.localStorage.setItem("photos", images);
         $('#Photos').html("");
+    }
+
+    function addPhoto() {
+        var imageData = 'http://i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg';
+        $('#Photos').append('<li><img src="' + imageData + '"/></li>');
+
+        images.Push(imageData);
+        window.localStorage.setItem("photos", images);
+
+        window.localStorage.setItem('test', 'value10');
     }
 
     /**
@@ -61,20 +70,29 @@
     }
 
     $(document).ready(function () {
-        images = window.localStorage.getItem("photo_data");
+        alert('doc ready');
+
+        images = window.localStorage.getItem("photos");
+
         if (images == undefined) {
             images = new Array();
         }
 
+        alert(images);
+
         $.each(images, function(key, value) {
             $('#Photos').append('<li><img src="' + value + '"/></li>');
+            alert('adding photo');
         });
+
+        alert(window.localStorage.getItem('test'));
+
     });
 
 </script>
 
 </head>
-<body onload="init();" style="margin-bottom:30px;">
+<body>
 
         <div data-role="page" data-title="Photos" id="PhotosPage">
 
@@ -98,8 +116,9 @@
     </div>
         <h2>Actions</h2>
 
-        <button onclick="capturePhotoWithFile();">Capture Photo</button> 
-        <button onclick="clearImages();">Clear images</button>
+        <button class="btn btn-primary" onclick="capturePhotoWithFile();">Capture Photo</button> 
+        <button class="btn btn-primary" onclick="clearImages();">Clear images</button>
+        <button class="btn btn-primary" onclick="addPhoto();">Add Photo</button>
 
             <br />
             <br />
