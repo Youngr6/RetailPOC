@@ -35,7 +35,6 @@ local.properties
 
 */
 !www/
-!www/*
 !www/**
 AudaRetail.csproj
 Global.*
