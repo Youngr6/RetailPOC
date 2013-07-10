@@ -48,14 +48,26 @@ $(document).bind("mobileinit", function () {
 });
 
 $(document).ready(function () {
-    //$.mobile.defaultPageTransition = 'none';
-    //$.mobile.page.prototype.options.addBackBtn = true;
     $.ajaxSetup({ cache: false });
     $.support.cors = true;
-    //$.mobile.allowCrossDomainPages = true;
 
-    $('#imgSearch').click(function () { window.location.href = 'joblog.html'; });
+    $('#searchForm').submit(function () {
+        submitSearchForm();
+        return false;
+    });
+
+    $('#imgSearch').click(function () {
+        submitSearchForm();
+    });
 });
 
+function submitSearchForm() {
+    getNewEstimate();
+
+    estimateModel.vehicleReg = $('#txtRegistrationSearch').val().toUpperCase();
+    storeCurrentEstimate();
+
+    window.location.href = 'joblog.html';
+}
 
 

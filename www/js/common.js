@@ -17,12 +17,48 @@
  * under the License.
  */
 
+var estimateModel =  {
+    vehicleReg: "",
+    dateCreated: new Date(),
+    photos: new Array(),
+    signatureData: {
+        signature: "",
+        name: "",
+        accepted: false
+    }
+};
 
+function storeCurrentEstimate() {
+    window.localStorage.setItem("current_Estimate", JSON.stringify(estimateModel));
+}
+
+function getCurrentEstimate() {
+    var estString = window.localStorage.getItem("current_Estimate");
+    if (estString != undefined) {
+        estimateModel = JSON.parse(estString);
+    } else {
+        getNewEstimate();
+    }
+}
+
+function getNewEstimate() {
+    estimateModel =  {
+        vehicleReg: "",
+        dateCreated: new Date(),
+        photos: new Array(),
+        signatureData: {
+            signature: "",
+            name: "",
+            accepted: false
+        }
+    };
+}
 
 $(document).ready(function () {
     $('ul.nav > li.disabled > a').click(function () { return false; });
     $.ajaxSetup({ cache: false });
     $.support.cors = true;
+
 });
 
 

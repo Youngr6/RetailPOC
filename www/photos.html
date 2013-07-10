@@ -12,11 +12,10 @@
 
     <script src="scripts/jquery-1.9.1.js"></script>
     <script src="scripts/bootstrap.js"></script>
+    <script src="js/common.js"></script>
     <script src="phonegap.js"></script>
 
 <script type="text/javascript" charset="utf-8">
-
-    var images;
 
     //-------------------------------------------------------------------------
     // Capture
@@ -29,14 +28,10 @@
 
     function onPhotoFileSuccess(imageData) {
 
-        var smallImage = document.getElementById('camera_image');
-        smallImage.style.display = "block";
-        smallImage.src = imageData;
+        addImageToGallery(imageData);
 
-        $('#Photos').append('<li><img src="' + imageData + '"/></li>');
-
-        images.push(imageData);
-        window.localStorage.setItem("photos", JSON.stringify(images));
+        estimateModel.photos.push(imageData);
+        storeCurrentEstimate();
     }
 
     function onFail(e){
@@ -45,17 +40,18 @@
     }
 
     function clearImages() {
-        images = new Array();
-        window.localStorage.setItem("photos", images);
-        $('#Photos').html("");
+        estimateModel.photos = new Array();
+        storeCurrentEstimate();
+
+        $('#Gallery').html("");
     }
 
     function addPhoto() {
         var imageData = 'http://i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg';
-        $('#Photos').append('<li><img src="' + imageData + '"/></li>');
+        addImageToGallery(imageData);
 
-        images.push(imageData);
-        window.localStorage.setItem("photos", JSON.stringify(images));
+        estimateModel.photos.push(imageData);
+        storeCurrentEstimate();
     }
 
     /**
@@ -69,20 +65,22 @@
 
     $(document).ready(function () {
 
-        var jString = window.localStorage.getItem("photos");
-        if(jString != undefined)
-            images = JSON.parse(jString);
+        getCurrentEstimate();
+        $('#regDisplay').html(estimateModel.vehicleReg);
 
-        if (images == undefined) {
-            images = new Array();
+        if (estimateModel.photos == undefined) {
+            estimateModel.photos = new Array();
         }
 
-        $.each(images, function(key, value) {
-            $('#Photos').append('<li><img src="' + value + '"/></li>');
+        $.each(estimateModel.photos, function (key, value) {
+            addImageToGallery(value);
         });
 
     });
 
+    function addImageToGallery(imgSource) {
+        $('#Gallery').append('<li class="span4"><img src="' + imgSource + '"/></li>');
+    }
 </script>
 
 </head>
@@ -93,7 +91,7 @@
         <div class="navbar navbar-fixed-top">
           <div class="navbar-inner ">
             <div class="container">
-              <a class="brand" href="#">AudaRetail</a>
+              <span id="regDisplay" class="brand">AudaRetail</span>
                 <ul class="nav">
                     <li><a href="index.html">Close job</a></li>
                 </ul>
@@ -101,18 +99,17 @@
           </div>
         </div>
 
-        <ul id="Photos">
+
+
+        <p>
+        <button type="button" class="btn btn-block btn-primary" onclick="capturePhotoWithFile();">Capture Photo</button> 
+        <button type="button" class="btn btn-block btn-primary" onclick="clearImages();">Clear images</button>
+        <button type="button" class="btn btn-block btn-primary" onclick="addPhoto();">Add Photo</button>
+        </p>
+
+        <ul class="thumbnails" id="Gallery">
         </ul>
 
-    <h1>Capture</h1>
-    <div id="info">
-        <img style="width:120px;height:120px;" id="camera_image" src="" />
-    </div>
-        <h2>Actions</h2>
-
-        <button class="btn btn-primary" onclick="capturePhotoWithFile();">Capture Photo</button> 
-        <button class="btn btn-primary" onclick="clearImages();">Clear images</button>
-        <button class="btn btn-primary" onclick="addPhoto();">Add Photo</button>
 
             <br />
             <br />

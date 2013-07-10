@@ -16,6 +16,7 @@
     <!--[if lt IE 9]><script src="scripts/flashcanvas.js"></script><![endif]-->
     <script src="scripts/jquery.signaturepad.min.js"></script>
     <script src="scripts/json2.min.js"></script>
+    <script src="js/common.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -23,8 +24,34 @@
                 drawOnly: true
                 ,lineTop: 100
             };
-            $('.sigPad').signaturePad(options);
+            var sig = $('.sigPad').signaturePad(options);
+
+            getCurrentEstimate();
+            $('#regDisplay').html(estimateModel.vehicleReg);
+
+            $('#signatureForm').submit(function () {
+                acceptSignature();
+                return false;
+            });
+
+            $('#acceptButton').click(function () {
+                acceptSignature();
+            });
+
+            if (estimateModel.signatureData.signature != "") {
+                sig.regenerate(estimateModel.signatureData.signature);
+            }
+            $('#name').val(estimateModel.signatureData.name);
         });
+
+        function acceptSignature() {
+            estimateModel.signatureData.signature = $('#sigOutput').val();
+            estimateModel.signatureData.name = $('#name').val();
+            estimateModel.signatureData.accepted = true;
+            storeCurrentEstimate();
+        }
+
+
     </script>
 
 </head>
@@ -35,17 +62,15 @@
         <div class="navbar navbar-fixed-top">
           <div class="navbar-inner ">
             <div class="container">
-              <a class="brand" href="#">AudaRetail</a>
+              <span id="regDisplay" class="brand">AudaRetail</span>
                 <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.html">Close job</a></li>
                 </ul>
             </div>
           </div>
         </div>
 
-      <form method="post" action="" class="sigPad">
+      <form id="signatureForm" class="sigPad">
         <label for="name">Print your name</label>
         <input type="text" name="name" id="name" class="name"/>
         <p />
@@ -56,9 +81,9 @@
         <div class="sig sigWrapper">
           <div class="typed"></div>
           <canvas class="pad" width="248" height="155"></canvas>
-          <input type="hidden" name="output" class="output"/>
+          <input type="hidden" id="sigOutput" name="output" class="output"/>
         </div>
-        <button type="submit">I accept the terms of this agreement.</button>
+        <button id="acceptButton" type="submit" class="btn-primary">I accept the terms of this agreement.</button>
       </form>
 
 
