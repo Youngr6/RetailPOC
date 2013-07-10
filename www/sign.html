@@ -9,9 +9,23 @@
     <link rel="stylesheet" href="css/site.css"/>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/jquery.signaturepad.css" />
 
     <script src="scripts/jquery-1.9.1.js"></script>
     <script src="scripts/bootstrap.js"></script>
+    <!--[if lt IE 9]><script src="scripts/flashcanvas.js"></script><![endif]-->
+    <script src="scripts/jquery.signaturepad.min.js"></script>
+    <script src="scripts/json2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var options = {
+                drawOnly: true
+            };
+            $('.sigPad').signaturePad(options);
+        });
+    </script>
+
 </head>
 <body>
 
@@ -30,7 +44,22 @@
           </div>
         </div>
 
-            <p>Placeholder for signatures</p>
+      <form method="post" action="" class="sigPad">
+        <label for="name">Print your name</label>
+        <input type="text" name="name" id="name" class="name"/>
+        <p class="drawItDesc">Please sign below</p>
+        <ul class="sigNav">
+          <li class="drawIt"><a href="#draw-it" >Draw It</a></li>
+          <li class="clearButton"><a href="#clear">Clear</a></li>
+        </ul>
+        <div class="sig sigWrapper">
+          <div class="typed"></div>
+          <canvas class="pad" width="198" height="55"></canvas>
+          <input type="hidden" name="output" class="output"/>
+        </div>
+        <button type="submit">I accept the terms of this agreement.</button>
+      </form>
+
 
           <div id="footer" class="navbar">
             <div class="navbar-inner">
