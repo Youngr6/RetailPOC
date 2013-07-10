@@ -24,7 +24,7 @@
 .sigPad {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 250px;
 }
 
 .sigPad label {
@@ -43,7 +43,7 @@
 .sigPad input {
   margin: 0;
   padding: 0.2em 0;
-  width: 198px;
+  width: 248px;
 
   border: 1px solid #666;
 
@@ -147,7 +147,7 @@
 
 .sigWrapper {
   clear: both;
-  height: 55px;
+  height: 155px;
 
   border: 1px solid #ccc;
 }
